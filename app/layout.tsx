@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, Playfair_Display, Caveat } from "next/font/google";
 import "./globals.css";
+import AuthModal from "./components/AuthModal";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -38,7 +39,10 @@ export default function RootLayout({
       lang="en"
       className={`${nunito.variable} ${playfair.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+        <AuthModal />
+      </body>
     </html>
   );
 }

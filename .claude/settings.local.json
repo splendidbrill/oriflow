@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm run *)",
-      "Bash(grep \"\\\\.css$\")"
+      "Bash(grep \"\\\\.css$\")",
+      "Bash(npx tsc *)"
     ]
   }
 }
