@@ -3,7 +3,13 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(grep \"\\\\.css$\")",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(npm install *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} | %{time_total}s\\\\n\" http://localhost:3000/talk)",
+      "Bash(curl -s http://localhost:3000/talk)",
+      "Bash(kill bi5on4gd8 *)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl *)"
     ]
   }
 }
