@@ -9,7 +9,15 @@
       "Bash(curl -s http://localhost:3000/talk)",
       "Bash(kill bi5on4gd8 *)",
       "Bash(pkill -f \"next dev\")",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "WebSearch",
+      "PowerShell($content = Get-Content \"C:\\\\Code\\\\oriflow\\\\oriflow\\\\.next\\\\dev\\\\logs\\\\next-development.log\"; $content.Count; $content | Select-Object -Last 3)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -ErrorAction SilentlyContinue; $response.StatusCode)",
+      "PowerShell(Start-Sleep -Seconds 3; $content = Get-Content \"C:\\\\Code\\\\oriflow\\\\oriflow\\\\.next\\\\dev\\\\logs\\\\next-development.log\"; $content.Count; $content | Select-Object -Last 5)",
+      "PowerShell($html = \\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing\\).Content; if \\($html -match \"error|Error|cannot|Cannot\"\\) { \"Contains errors\" } else { \"Clean page load\" }; $html.Length)",
+      "PowerShell($html = \\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing\\).Content; $html | Select-String -Pattern \"\\(?i\\)\\(error|cannot|module not found\\)\" -AllMatches | Select-Object -First 10 | ForEach-Object { $_.Line.Substring\\([Math]::Max\\(0, $_.Matches[0].Index - 50\\), [Math]::Min\\(200, $_.Line.Length - [Math]::Max\\(0, $_.Matches[0].Index - 50\\)\\)\\) })",
+      "PowerShell($html = \\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing\\).Content; if \\($html -match \"Module not found|Axes can only\"\\) { \"FONT ERROR STILL PRESENT\" } else { \"Font error resolved!\" }; if \\($html -match \"Shape your life\"\\) { \"Hero text found!\" } else { \"Hero text NOT found\" })",
+      "PowerShell($css = \\(Invoke-WebRequest -Uri \"http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__0kui1jk._.css\" -UseBasicParsing\\).Content; $checks = @\\(\"auraBreathe\",\"markBreathe\",\"auroraShift\",\"threadDraw\",\"prismDrift\",\"petalDrift\",\"verdictIn\",\"findmodeShift\"\\); foreach \\($k in $checks\\) { if \\($css -match $k\\) { \"OK: $k\" } else { \"MISSING: $k\" } })"
     ]
   }
 }
